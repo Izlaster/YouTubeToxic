@@ -13,6 +13,8 @@ RUN export KAGGLE_USERNAME=$(jq -r .username /root/.kaggle/kaggle.json) \
 RUN pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
+RUN mkdir -p torchapp/toxic_model/trained_models
+
 EXPOSE 8000
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
