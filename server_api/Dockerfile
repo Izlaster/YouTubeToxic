@@ -1,4 +1,4 @@
-FROM python:3.10.7
+FROM mirror.gcr.io/library/python:3.10.7
 
 SHELL [ "/bin/bash", "-c" ]
 
