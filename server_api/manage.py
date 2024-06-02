@@ -1,16 +1,15 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
+
 import os
 import sys
 
-from torchapp.toxic_model.train_pipeline import run_training
-from torchapp.toxic_model.processing.data_manager import load_dataset
-
 flag = True
+
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'todoapp.settings')
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "todoapp.settings")
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -21,7 +20,6 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
-if __name__ == '__main__':
-    load_dataset()
-    run_training()
+
+if __name__ == "__main__":
     main()
